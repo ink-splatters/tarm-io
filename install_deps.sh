@@ -9,6 +9,7 @@ if [ ! -e build ]; then
     mkdir cmake-bulid-release
 fi
 
+unameOut="$(uname -s)"
 case "${unameOut}" in
     Linux*)     machine=linux;;
     Darwin*)    machine=macos;;
