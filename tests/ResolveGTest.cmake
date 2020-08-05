@@ -8,7 +8,7 @@
 unset(GTest_DIR CACHE)
 
 if (TARM_IO_USE_EXTERNAL_GTEST)
-    find_package(GTest REQUIRED CONFIG HINTS ${GTEST_ROOT})
+#    find_package(GTest REQUIRED CONFIG HINTS ${GTEST_ROOT})
 else()
     # Gtest is built during CMake configuration step because it is very lightweight
     # and we want to be able to find it via 'find_package' which is impossible with ExternalProject_Add.

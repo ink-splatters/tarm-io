@@ -66,8 +66,10 @@ endif()
 include(GNUInstallDirs)
 include(CMakePackageConfigHelpers)
 
-if (TARM_IO_USE_EXTERNAL_LIBUV)
-    find_package(LibUV REQUIRED)
+if (TARM_IO_USE_EXTERNAL_LIBUV OR TARM_IO_USE_EXTERNAL_GTEST)
+#    find_package(LibUV REQUIRED)
+    include(${CMAKE_BINARY_DIR}/conanbuildinfo_multi.cmake)
+    conan_basic_setup(TARGETS KEEP_RPATHS)
 endif()
 
 add_subdirectory("thirdparty")
