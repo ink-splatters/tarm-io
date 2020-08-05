@@ -1,0 +1,16 @@
+[requires]
+boost/1.73.0
+libuv/1.31.0@bincrafters/stable
+gtest/1.8.1@bincrafters/stable
+
+[options]
+boost:shared=True
+libuv:shared=True
+gtest:shared=True
+
+[generators]
+cmake_multi
+
+[imports]
+lib, *.dylib* -> ./bin # Copies all dylib files from packages lib folder
+lib, *.so* -> ./bin # Copies all so files from packages lib folder
